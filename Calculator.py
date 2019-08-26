@@ -5,7 +5,6 @@ from tkinter import *
 # Sets the title of the GUI
 master = tk.Tk()
 master.title('Calculator')
-global output
 
 # The add equation button
 def add():
@@ -32,7 +31,8 @@ def divide():
         output = Label(master, text = divisionNum, width = 20)
         output.place(x = 250, y = 68, anchor = 'center')
     except ZeroDivisionError:
-        print('You can\'t divide by zero')
+        output = Label(master, text = 'You can not divide by 0', width = 20)
+        output.place(x = 250, y = 68, anchor = 'center')
     
 # The modulo equation button
 def modulo():
@@ -41,7 +41,8 @@ def modulo():
         output = Label(master, text = moduloNum, width = 20)
         output.place(x = 250, y = 68, anchor = 'center')
     except ZeroDivisionError:
-        print('You can\'t divide by zero')
+        output = Label(master, text = 'You can not modulo by 0', width = 20)
+        output.place(x = 250, y = 68, anchor = 'center')
 
 # Creates the Entry boxes for the numbers
 firstNumber = tk.IntVar()
